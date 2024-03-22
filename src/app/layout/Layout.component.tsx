@@ -1,5 +1,4 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { useLayoutHook } from './Layout.hook';
 import { LayoutStyles } from './Layout.styles';
 import { MainComponent } from '../main/Main.component';
