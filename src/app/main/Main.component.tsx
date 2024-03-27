@@ -1,7 +1,11 @@
 import React from 'react';
-import { Text } from 'react-native';
 import { useMainHook } from './Main.hook';
 import { MainStyles } from './Main.styles';
+import { createStackNavigator } from '@react-navigation/stack';
+import { HomeComponent } from './home/Home.component';
+import { MainNavigationStackRoutes } from '../_shared/constants/routes';
+
+const MainNavigationStack = createStackNavigator<MainNavigationStackRoutes>();
 
 export type MainComponentProps = {};
 
@@ -10,7 +14,12 @@ export const MainComponent = (props: MainComponentProps) => {
 
     return (
         <>
-            <Text>MainComponent</Text>
+            <MainNavigationStack.Navigator
+                screenOptions={{
+                    headerShown: false,
+                }}>
+                <MainNavigationStack.Screen name='home' component={HomeComponent} />
+            </MainNavigationStack.Navigator>
         </>
     );
 };
